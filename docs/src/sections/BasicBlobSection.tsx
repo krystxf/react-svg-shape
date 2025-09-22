@@ -4,7 +4,7 @@ import { DocsBlock } from "../components/DocsBlock";
 
 const svgPath = generatePath({ complexity: 16, contrast: 4 });
 
-export const BasicBlobDocs = () => {
+export const BasicBlobSection = () => {
   return (
     <DocsBlock title="Basic Blob">
       <CodeBlock

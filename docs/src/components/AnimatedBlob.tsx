@@ -1,13 +1,14 @@
 import { useState, useEffect, useCallback } from "react";
 import { generatePath, SvgShape } from "react-svg-shape";
 import { motion } from "motion/react";
+import { cn } from "../lib/utils";
 
 const MotionSvgShapePath = motion.create(SvgShape.Path);
 
 const COLORS: [string, string] = ["#f87537", "#fba81f"];
 const INTERVAL_DURATION = 2_000;
 
-export const AnimatedBlob = () => {
+export const AnimatedBlob = ({ className }: { className?: string }) => {
   const handleGenerateShapes = useCallback(
     () => [
       generatePath({ complexity: 16, contrast: 0 }),
@@ -31,7 +32,10 @@ export const AnimatedBlob = () => {
   }, [setShapes, handleGenerateShapes]);
 
   return (
-    <SvgShape viewBox="-150 -150 300 300" className="size-full">
+    <SvgShape
+      viewBox="-150 -150 300 300"
+      className={cn("size-full", className)}
+    >
       {shapes.map((shape, index) => (
         <motion.g
           key={index}

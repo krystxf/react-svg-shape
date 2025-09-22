@@ -10,7 +10,7 @@ export const DocsBlock = ({
   subtitle?: string;
 }) => {
   return (
-    <div className="flex flex-col gap-8 my-20">
+    <section className="flex flex-col gap-8 my-20">
       <div className="flex flex-col gap-2">
         <h2 className="text-5xl font-semibold text-center text-neutral-800">
           {title}
@@ -21,6 +21,6 @@ export const DocsBlock = ({
       <div className="flex md:flex-row flex-col gap-4 items-center  ">
         {children}
       </div>
-    </div>
+    </section>
   );
 };

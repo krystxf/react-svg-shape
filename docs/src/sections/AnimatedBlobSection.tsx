@@ -6,7 +6,7 @@ import { DocsBlock } from "../components/DocsBlock";
 const INTERVAL_DURATION = 1_000;
 const generateShapePath = () => generatePath({ complexity: 16, contrast: 4 });
 
-export const AnimatedBlobDocs = () => {
+export const AnimatedBlobSection = () => {
   const [svgPath, setSvgPath] = useState(generateShapePath());
 
   useEffect(() => {

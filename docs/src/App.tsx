@@ -1,29 +1,22 @@
-import { AnimatedBlob } from "./components/AnimatedBlob";
-import { SvgBackground } from "./components/SvgBackground";
-import SvgGenerator from "./docs/SvgGenerator";
-import { AnimatedBlobDocs } from "./docs/AnimatedBlobDocs";
-import { BasicBlobDocs } from "./docs/BasicBlobDocs";
-import { DocsBlock } from "./components/DocsBlock";
+import SvgGeneratorSection from "./sections/SvgGeneratorSection";
+import { AnimatedBlobSection } from "./sections/AnimatedBlobSection";
+import { BasicBlobSection } from "./sections/BasicBlobSection";
+import { ComplexBlobSection } from "./sections/ComplexBlobSection";
+import { Footer } from "./components/Footer";
 
-function App() {
+export default function App() {
   return (
-    <div className="max-w-7xl mx-auto p-8">
-      <SvgGenerator />
+    <>
+      <div className="max-w-7xl mx-auto p-8">
+        <SvgGeneratorSection />
 
-      <BasicBlobDocs />
+        <BasicBlobSection />
 
-      <AnimatedBlobDocs />
+        <AnimatedBlobSection />
 
-      <DocsBlock
-        title="Complex Blob"
-        subtitle="⚠️ Works only in Chromium based browsers"
-      >
-        <SvgBackground className="size-full">
-          <AnimatedBlob />
-        </SvgBackground>
-      </DocsBlock>
-    </div>
+        <ComplexBlobSection />
+      </div>
+      <Footer />
+    </>
   );
 }
-
-export default App;
