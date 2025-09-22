@@ -1,11 +1,7 @@
-import { range, scaleLinear, radialLine, curveBasisClosed } from "d3";
-
-const d3 = {
-  range,
-  scaleLinear,
-  radialLine,
-  curveBasisClosed,
-};
+import { range } from "d3-array";
+import { scaleLinear } from "d3-scale";
+import { radialLine } from "d3-shape";
+import { curveBasisClosed } from "d3-shape";
 
 export function roundPath(path: string, precision: number = 0.1): string {
   if (!path) return "";
@@ -22,21 +18,19 @@ export function generateBlobShape(data: number[]): string {
     return [angle, Math.abs(radius)] as [number, number];
   });
 
-  const shapeGenerator = d3
-    .radialLine<[number, number]>()
+  const shapeGenerator = radialLine<[number, number]>()
     .angle((d) => d[0])
-    .curve(d3.curveBasisClosed)
+    .curve(curveBasisClosed)
     .radius((d) => d[1]);
 
   return shapeGenerator(polarData) || "";
 }
 
 export function generateData(complexity: number, contrast: number): number[] {
-  const scale = d3
-    .scaleLinear()
+  const scale = scaleLinear()
     .domain([0, 1])
     .range([50 - ((50 / 12) * contrast - 0.01), 50]);
-  return d3.range(complexity).map(() => scale(Math.random()));
+  return range(complexity).map(() => scale(Math.random()));
 }
 
 export type ShapeGeneratorOptions = {

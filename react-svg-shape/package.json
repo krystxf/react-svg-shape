@@ -1,28 +1,51 @@
 {
   "name": "react-svg-shape",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.3",
+  "description": "A lightweight React library for generating beautiful SVG blob shapes with customizable complexity, contrast, and styling options.",
   "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "sideEffects": false,
   "scripts": {
-    "build": "tsc"
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "postbuild": "rm -f dist/*.js.map",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "d3": "^7.9.0",
+    "d3-array": "^3.2.4",
+    "d3-scale": "^4.0.2",
+    "d3-shape": "^3.2.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
-    "@types/d3": "^7.4.3",
+    "@types/d3-array": "^3.2.1",
+    "@types/d3-scale": "^4.0.8",
+    "@types/d3-shape": "^3.1.4",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "typescript": "^5.9.2"
   },
   "keywords": [
+    "react",
+    "svg",
     "blob",
     "shape",
-    "svg",
-    "react"
+    "generator",
+    "d3",
+    "typescript",
+    "ui",
+    "graphics",
+    "animation"
   ],
   "author": "Krystof",
   "license": "ISC",
