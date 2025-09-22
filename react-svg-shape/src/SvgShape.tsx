@@ -1,21 +1,11 @@
 import { useId, type SVGProps } from "react";
 
 export const SvgShapeWrapper = ({
-  style,
   children,
   ...rest
 }: SVGProps<SVGSVGElement>) => {
   return (
-    <svg
-      viewBox="-50 -50 100 100"
-      xmlns="http://www.w3.org/2000/svg"
-      style={{
-        width: "15rem",
-        height: "15rem",
-        ...style,
-      }}
-      {...rest}
-    >
+    <svg viewBox="-50 -50 100 100" xmlns="http://www.w3.org/2000/svg" {...rest}>
       {children}
     </svg>
   );
@@ -25,12 +15,11 @@ export const SvgShapePath = ({
   svgPath,
   colors,
   hasStroke,
-  style,
   ...rest
 }: {
   svgPath: string;
   colors: [string, string];
-  hasStroke: boolean;
+  hasStroke?: boolean;
 } & SVGProps<SVGPathElement>) => {
   const id = useId();
   const gradientId = `gradient-${id}`;
@@ -56,11 +45,6 @@ export const SvgShapePath = ({
         d={svgPath}
         width="100%"
         height="100%"
-        // transform="translate(50 50)"
-        style={{
-          transition: "all 0.3s ease-in-out",
-          ...style,
-        }}
         {...rest}
       />
     </>

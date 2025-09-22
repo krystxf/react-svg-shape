@@ -1,7 +1,6 @@
 {
-  "name": "svg-shape-generator-web",
-  "private": true,
-  "version": "0.0.0",
+  "name": "react-svg-shape-web",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,13 +10,19 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
-    "@types/d3": "^7.4.3",
+    "clsx": "^2.1.1",
     "d3": "^7.9.0",
+    "motion": "^12.23.16",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-svg-shape": "file:../react-svg-shape",
+    "react-syntax-highlighter": "^15.6.6",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",
+    "@types/d3": "^7.4.3",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.2",
