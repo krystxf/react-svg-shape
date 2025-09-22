@@ -1,0 +1,78 @@
+name: Deploy Package
+
+on:
+  push:
+    branches: [main]
+    # paths:
+    #   - "package/**"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch full history for version bumping
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.0
+
+      - name: Install dependencies
+        run: |
+          cd package
+          pnpm install
+
+      - name: Build package
+        run: |
+          cd package
+          pnpm run build
+
+      - name: Bump version and publish
+        run: |
+          cd package
+          # Configure git for npm version bumping
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          # Bump patch version
+          npm version patch --no-git-tag-version
+
+          # Publish to npm
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Commit bumped version
+        run: |
+          cd package
+          NEW_VERSION=$(node -p "require('./package.json').version")
+
+          # Add the updated package.json
+          git add package.json
+
+          # Commit the version bump
+          git commit -m "chore: bump version to $NEW_VERSION [skip ci]"
+
+          # Push the commit back to the repository
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create and push tag
+        run: |
+          cd package
+          NEW_VERSION=$(node -p "require('./package.json').version")
+          git tag "v$NEW_VERSION"
+          git push origin "v$NEW_VERSION"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
