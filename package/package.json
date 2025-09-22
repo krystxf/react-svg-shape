@@ -1,6 +1,6 @@
 {
   "name": "react-svg-shape",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A lightweight React library for generating beautiful SVG blob shapes with customizable complexity, contrast, and styling options.",
   "main": "dist/index.js",
   "module": "dist/index.js",
