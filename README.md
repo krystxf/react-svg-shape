@@ -13,6 +13,8 @@ npm i react-svg-shape
 ## Basic Blob
 
 ```tsx
+import { generatePath, SvgShape } from "react-svg-shape";
+
 const svgPath = generatePath({ complexity: 16, contrast: 4 });
           
 const SvgBlobComponent = () => {
@@ -30,6 +32,7 @@ const SvgBlobComponent = () => {
 
 ```tsx
 import { useEffect, useState } from "react";
+import { generatePath, SvgShape } from "react-svg-shape";
 
 const INTERVAL_DURATION = 1_000;
 const generateShapePath = () => generatePath({ complexity: 16, contrast: 4 });
