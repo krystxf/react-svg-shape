@@ -3167,7 +3167,9 @@ snapshots:
 
   react-svg-shape@file:../react-svg-shape:
     dependencies:
-      d3: 7.9.0
+      d3-array: 3.2.4
+      d3-scale: 4.0.2
+      d3-shape: 3.2.0
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
 
