@@ -18,7 +18,7 @@
     "build": "tsc",
     "postbuild": "rm -f dist/*.js.map",
     "clean": "rm -rf dist",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build && cp ../README.md ./README.md"
   },
   "dependencies": {
     "d3-array": "^3.2.4",
