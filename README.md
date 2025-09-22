@@ -62,3 +62,6 @@ const SvgBlobAnimatedComponent = () => {
 ```
 
 <img src="https://github.com/user-attachments/assets/bf581601-d02e-4b5c-9eb9-8badac486634" alt="Animated Blob" width="100%"/>
+
+## Honorable Mention
+https://www.softr.io/tools/svg-shape-generator
