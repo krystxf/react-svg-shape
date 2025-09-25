@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "@react-svg-shape/docs",
   "version": "0.0.1",
   "type": "module",
   "scripts": {
@@ -14,7 +14,7 @@
     "motion": "^12.23.16",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-svg-shape": "file:../package",
+    "react-svg-shape": "file:../../packages/react-svg-shape",
     "react-syntax-highlighter": "^15.6.6",
     "tailwind-merge": "^3.3.1"
   },

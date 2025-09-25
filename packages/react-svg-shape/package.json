@@ -18,7 +18,7 @@
     "build": "tsc",
     "postbuild": "rm -f dist/*.js.map",
     "clean": "rm -rf dist",
-    "prepublishOnly": "npm run build && cp ../README.md ./README.md"
+    "prepublishOnly": "npm run build && cp ../../README.md ./README.md"
   },
   "dependencies": {
     "d3-array": "^3.2.4",
@@ -38,13 +38,8 @@
   "keywords": [
     "react",
     "svg",
-    "blob",
     "shape",
     "generator",
-    "d3",
-    "typescript",
-    "ui",
-    "graphics",
     "animation"
   ],
   "author": "Krystof",
