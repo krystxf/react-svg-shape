@@ -1,4 +1,0 @@
-{
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "pnpm install && cd ../../packages/react-svg-shape && pnpm run build && cd ../../apps/docs && pnpm run build"
-}
