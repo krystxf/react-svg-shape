@@ -16,7 +16,7 @@ export const AnimatedBlob = ({ className }: { className?: string }) => {
       generatePath({ complexity: 16, contrast: 4 }),
       generatePath({ complexity: 16, contrast: 6 }),
     ],
-    []
+    [],
   );
 
   const [shapes, setShapes] = useState<string[]>(handleGenerateShapes);

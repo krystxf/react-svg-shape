@@ -1,6 +1,6 @@
 export function downloadSVG(
   svgContent: string,
-  filename: string = "generated-shape.svg"
+  filename: string = "generated-shape.svg",
 ): void {
   const blob = new Blob([svgContent], { type: "image/svg+xml" });
   const url = window.URL.createObjectURL(blob);

@@ -7,7 +7,7 @@ export function roundPath(path: string, precision: number = 0.1): string {
   if (!path) return "";
   const query = /[\d.-][\d.e-]*/g;
   return path.replace(query, (n: string) =>
-    String(Math.round(Number(n) * (1 / precision)) / (1 / precision))
+    String(Math.round(Number(n) * (1 / precision)) / (1 / precision)),
   );
 }
 
@@ -49,7 +49,7 @@ export function createSVGContent(
   path: string,
   color1: string,
   color2?: string,
-  stroke: boolean = false
+  stroke: boolean = false,
 ): string {
   const fillColor = stroke ? "none" : color2 ? "url(#gradient)" : color1;
 
@@ -79,7 +79,7 @@ export function createSimpleSVGContent(
   path: string,
   color1: string,
   color2?: string,
-  stroke: boolean = false
+  stroke: boolean = false,
 ): string {
   const fillColor = stroke ? "none" : color2 ? "url(#gradient)" : color1;
 
