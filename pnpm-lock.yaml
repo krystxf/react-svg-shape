@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      prettier:
+        specifier: ^3.6.2
+        version: 3.6.2
       turbo:
         specifier: ^2.5.8
         version: 2.5.8
@@ -16,7 +19,7 @@ importers:
     dependencies:
       '@tailwindcss/vite':
         specifier: ^4.1.13
-        version: 4.1.13(vite@7.1.7(jiti@2.6.0)(lightningcss@1.30.1))
+        version: 4.1.13(vite@7.1.7(jiti@2.6.0)(lightningcss@1.30.1)(yaml@2.8.1))
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -53,7 +56,7 @@ importers:
         version: 15.5.13
       '@vitejs/plugin-react':
         specifier: ^5.0.2
-        version: 5.0.3(vite@7.1.7(jiti@2.6.0)(lightningcss@1.30.1))
+        version: 5.0.3(vite@7.1.7(jiti@2.6.0)(lightningcss@1.30.1)(yaml@2.8.1))
       autoprefixer:
         specifier: ^10.4.21
         version: 10.4.21(postcss@8.5.6)
@@ -83,7 +86,7 @@ importers:
         version: 8.44.1(eslint@9.36.0(jiti@2.6.0))(typescript@5.8.3)
       vite:
         specifier: ^7.1.6
-        version: 7.1.7(jiti@2.6.0)(lightningcss@1.30.1)
+        version: 7.1.7(jiti@2.6.0)(lightningcss@1.30.1)(yaml@2.8.1)
 
   packages/react-svg-shape:
     dependencies:
@@ -1385,6 +1388,11 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
+  prettier@3.6.2:
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
+    engines: {node: '>=14'}
+    hasBin: true
+
   prismjs@1.27.0:
     resolution: {integrity: sha512-t13BGPUlFDR7wRB5kQDG4jjl7XeuH6jbJGt11JHPL96qwsEHNX2+68tFXqc1/k+/jALsbSWJKUOT/hcYAZ5LkA==}
     engines: {node: '>=6'}
@@ -1629,6 +1637,11 @@ packages:
   yallist@5.0.0:
     resolution: {integrity: sha512-YgvUTfwqyc7UXVMrB+SImsVYSmTS8X/tSrtdNZMImM+n7+QTriRXyXim0mBrTXNeqzVF0KWGgHPeiyViFFrNDw==}
     engines: {node: '>=18'}
+
+  yaml@2.8.1:
+    resolution: {integrity: sha512-lcYcMxX2PO9XMGvAJkJ3OsNMw+/7FKes7/hgerGUYWIoWu5j/+YQqcZr5JnPZWzOsEBgMbSbiSTn/dv/69Mkpw==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
 
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
@@ -2050,12 +2063,12 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.1.13
       '@tailwindcss/oxide-win32-x64-msvc': 4.1.13
 
-  '@tailwindcss/vite@4.1.13(vite@7.1.7(jiti@2.6.0)(lightningcss@1.30.1))':
+  '@tailwindcss/vite@4.1.13(vite@7.1.7(jiti@2.6.0)(lightningcss@1.30.1)(yaml@2.8.1))':
     dependencies:
       '@tailwindcss/node': 4.1.13
       '@tailwindcss/oxide': 4.1.13
       tailwindcss: 4.1.13
-      vite: 7.1.7(jiti@2.6.0)(lightningcss@1.30.1)
+      vite: 7.1.7(jiti@2.6.0)(lightningcss@1.30.1)(yaml@2.8.1)
 
   '@types/babel__core@7.20.5':
     dependencies:
@@ -2207,7 +2220,7 @@ snapshots:
       '@typescript-eslint/types': 8.44.1
       eslint-visitor-keys: 4.2.1
 
-  '@vitejs/plugin-react@5.0.3(vite@7.1.7(jiti@2.6.0)(lightningcss@1.30.1))':
+  '@vitejs/plugin-react@5.0.3(vite@7.1.7(jiti@2.6.0)(lightningcss@1.30.1)(yaml@2.8.1))':
     dependencies:
       '@babel/core': 7.28.4
       '@babel/plugin-transform-react-jsx-self': 7.27.1(@babel/core@7.28.4)
@@ -2215,7 +2228,7 @@ snapshots:
       '@rolldown/pluginutils': 1.0.0-beta.35
       '@types/babel__core': 7.20.5
       react-refresh: 0.17.0
-      vite: 7.1.7(jiti@2.6.0)(lightningcss@1.30.1)
+      vite: 7.1.7(jiti@2.6.0)(lightningcss@1.30.1)(yaml@2.8.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -2787,6 +2800,8 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
+  prettier@3.6.2: {}
+
   prismjs@1.27.0: {}
 
   prismjs@1.30.0: {}
@@ -2967,7 +2982,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  vite@7.1.7(jiti@2.6.0)(lightningcss@1.30.1):
+  vite@7.1.7(jiti@2.6.0)(lightningcss@1.30.1)(yaml@2.8.1):
     dependencies:
       esbuild: 0.25.10
       fdir: 6.5.0(picomatch@4.0.3)
@@ -2979,6 +2994,7 @@ snapshots:
       fsevents: 2.3.3
       jiti: 2.6.0
       lightningcss: 1.30.1
+      yaml: 2.8.1
 
   which@2.0.2:
     dependencies:
@@ -2991,5 +3007,8 @@ snapshots:
   yallist@3.1.1: {}
 
   yallist@5.0.0: {}
+
+  yaml@2.8.1:
+    optional: true
 
   yocto-queue@0.1.0: {}
