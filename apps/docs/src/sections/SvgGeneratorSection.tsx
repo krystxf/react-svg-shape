@@ -29,7 +29,7 @@ const SvgGeneratorSection: FC<SvgGeneratorProps> = () => {
         contrast: curve,
       });
     },
-    []
+    [],
   );
 
   const generateRandomShape = useCallback(() => {
