@@ -69,8 +69,6 @@ export function createSVGContent(
         stroke="${strokeColor}" 
         stroke-width="${strokeWidth}"
         d="${path}" 
-        width="100%" 
-        height="100%" 
         transform="translate(50 50)"/>
 </svg>`;
 }
@@ -98,8 +96,6 @@ export function createSimpleSVGContent(
         stroke="${strokeColor}" 
         stroke-width="${strokeWidth}"
         d="${path}" 
-        width="100%" 
-        height="100%" 
         transform="translate(50 50)"/>
 </svg>`;
 }

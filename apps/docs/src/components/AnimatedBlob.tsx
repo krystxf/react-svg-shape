@@ -26,8 +26,6 @@ export const AnimatedBlob = ({ className }: { className?: string }) => {
       setShapes(handleGenerateShapes());
     }, INTERVAL_DURATION);
 
-    setShapes(handleGenerateShapes());
-
     return () => clearInterval(interval);
   }, [setShapes, handleGenerateShapes]);
 

@@ -22,7 +22,9 @@ export const SvgShapePath = ({
   hasStroke?: boolean;
 } & SVGProps<SVGPathElement>) => {
   const id = useId();
-  const gradientId = `gradient-${id}`;
+  // Sanitize React useId output (can contain colons) for safe URL fragment usage
+  const safeId = (id || "").replace(/[^a-zA-Z0-9_-]/g, "");
+  const gradientId = `gradient-${safeId || "g"}`;
   const gradientIdUrl = `url(#${gradientId})`;
 
   const fill = hasStroke ? "none" : colors[1] ? gradientIdUrl : colors[0];
@@ -43,8 +45,6 @@ export const SvgShapePath = ({
         stroke={stroke}
         strokeWidth={strokeWidth}
         d={svgPath}
-        width="100%"
-        height="100%"
         {...rest}
       />
     </>
