@@ -14,8 +14,6 @@ export const AnimatedBlobSection = () => {
       setSvgPath(generateShapePath());
     }, INTERVAL_DURATION);
 
-    setSvgPath(generateShapePath());
-
     return () => clearInterval(interval);
   }, [setSvgPath]);
 
